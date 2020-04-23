@@ -1,0 +1,130 @@
+ <?php header("Access-Control-Allow-Origin: *"); ?>
+
+<!doctype html>
+<html style="min-width:300px;">
+  <head>
+    <title>New Manga</title>
+    <style>
+      body {
+      background-image: url("../images/popup_background.jpg");
+      font-family: sans-serif;
+      font-weight: normal;
+      color: black;
+      background-color: #eee;
+      width: 300px;
+      height: 424px;
+      }
+
+      .scrolling{
+      max-height: 260px;
+      clear: both;
+        overflow-y: auto;
+      }
+
+      .white{
+        color: white;
+        -webkit-text-fill-color: white;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: black;
+      }
+
+      .top{
+        vertical-align: top;
+        margin-top: 5px;
+        margin-left: 5px;
+        width: 90px;
+        height: 30px;
+        background-color: rgba(244, 244, 244,0.6);
+        border-radius: 6px;
+        border: 1px solid rgb(212,175,55)
+      }
+
+      #options{
+      height: 30px;
+      clear: both;
+      }
+
+      div {
+      clear: both;
+      }
+
+      label {
+      width: 200px;
+      height: 30px;
+      background-color: rgba(238, 238, 238,0.6);
+      overflow-y: hidden;
+      border-radius: 3px;
+      border: 1px solid #D1D3D4
+      }
+
+      input.radio:empty {
+      margin-left: -999px;
+      }
+
+      input.radio:empty ~ label {
+      position: relative;
+      float: left;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      }
+
+      input.radio:empty ~ label:before {
+      position: absolute;
+      display: block;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 2.5em;
+      background: #D1D3D4;
+      border-radius: 3px 0 0 3px;
+      }
+
+      button:hover{
+        color: #888;
+      }
+
+      input:hover[type="submit"] {
+        color: #888;
+      }
+
+      input.radio:hover:not(:checked) ~ label:before {
+      color: #C2C2C2;
+      }
+
+      input.radio:hover:not(:checked) ~ label {
+      color: #888;
+      }
+
+      input.radio:checked ~ label:before {
+
+      color: #9CE2AE;
+      background-color: #4DCB6D;
+      }
+
+      input.radio:checked ~ label {
+      color: #777;
+        background-color: rgba(238, 238, 238,1);
+      }
+
+      input.radio:focus ~ label:before {
+      box-shadow: 0 0 0 3px #999;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 class="white">Pages Added</h2>
+    <form id="aform">
+      <div class="scrolling" id="insert"></div>
+      <button id="addPage" class="top">Add Page</button>
+      <input type="submit" class="top" value="Delete Entry">
+    </form>
+
+    <script src="../lib/jquery-3.4.1.js"></script>
+    <script src="../scripts/popup.js"></script>
+    <script src="../scripts/background.js"></script>
+
+  </body>
+</html>

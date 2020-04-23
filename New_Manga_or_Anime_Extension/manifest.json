@@ -1,0 +1,38 @@
+{
+  "manifest_version": 2,
+  "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'",
+  "name": "New Manga and Anime Plugin",
+  "description": "This extension will notify if there is new Manga or Anime on a Kiss(Manga/Anime)",
+  "version": "2.0",
+
+  "browser_action": {
+   "default_icon": {
+     "16": "images/icon16.png",
+     "48": "images/icon48.png",
+     "128": "images/icon128.png"
+    },
+   "default_popup": "pages/popup.html"
+  },
+  "content_scripts": [
+        {
+            "js": [ "lib/jquery-3.4.1.js", "scripts/popup.js"],
+            "matches": [ "http://*/*", "https://*/*"]
+        }
+  ],
+  "background": {
+      "scripts": ["lib/jquery-3.4.1.js", "scripts/background.js"],
+      "persistent":false
+  },
+  "permissions": [
+   "activeTab",
+   "notifications",
+   "tabs",
+   "storage",
+   "alarms"
+   ],
+ "icons": {
+   "16": "images/icon16.png",
+   "48": "images/icon48.png",
+   "128": "images/icon128.png"
+  }
+}
